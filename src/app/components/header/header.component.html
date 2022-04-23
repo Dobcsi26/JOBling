@@ -1,1 +1,18 @@
-<p>header works!</p>
+<div id="main-header">
+    <a routerLink="/">
+        <div class="logo-box">
+            <img src="../../../assets/online-job-search-symbol.svg" alt="logo">
+            <div class="website-name">
+                JOBling
+            </div>
+        </div>
+    </a>
+    <div class="buttons">
+        <div class="button">
+            <button [routerLink]="'/login'" mat-raised-button class="submit">Login</button>
+        </div>
+        <div class="button">
+            <button [routerLink]="'/register'" mat-raised-button class="submit">Registration</button>
+        </div>
+    </div>
+</div>
