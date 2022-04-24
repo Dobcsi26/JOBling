@@ -7,7 +7,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { ScreenTrackingService,UserTrackingService } from '@angular/fire/analytics';
 import { provideAuth,getAuth } from '@angular/fire/auth';
@@ -18,7 +17,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeModule } from './pages/home/home.module';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { SingleAdvertisementComponent } from './pages/single-advertisement/single-advertisement.component';
@@ -29,6 +28,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,6 @@ import { MatButtonModule } from '@angular/material/button';
     HeaderComponent,
     FooterComponent,
     MenuComponent,
-    HomeComponent,
     LoginComponent,
     RegisterComponent,
     SingleAdvertisementComponent
@@ -48,9 +47,11 @@ import { MatButtonModule } from '@angular/material/button';
     BrowserAnimationsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    HomeModule,
 
     // App
     AppRoutingModule,
+    FormsModule,
 
     // Material
     MatToolbarModule,

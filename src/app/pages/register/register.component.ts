@@ -1,7 +1,7 @@
 import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Job_seeker } from '../../models/job_seeker';
+import { AuthService } from '../../services/auth.service';
 
 
 @Component({
@@ -19,10 +19,17 @@ export class RegisterComponent implements OnInit {
     age: new FormControl('')
   });
 
-  constructor() { }
+  constructor(private location: Location, private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){}
+  onSubmit() {
+    console.log(this.signUpForm.value);
+    this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('pw')?.value).then(cred => {
+      console.log(cred);
+    }).catch(error => {
+      console.error(error);
+    });
+  }
 }

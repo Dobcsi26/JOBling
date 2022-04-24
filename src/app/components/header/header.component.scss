@@ -11,7 +11,7 @@
   .buttons {
     display: flex;
     flex-flow: row nowrap;
-    margin-top: 5px;
+    margin-top: 15px;
     padding: 5px 0;
   }
 
@@ -27,6 +27,7 @@
       max-height: 54px;
       display: flex;
       flex-flow: row nowrap;
+      margin-top: 10px;
       align-items: center;
 
       img {

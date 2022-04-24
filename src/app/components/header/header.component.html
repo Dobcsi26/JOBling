@@ -8,8 +8,11 @@
         </div>
     </a>
     <div class="buttons">
-        <div class="button">
+        <div *ngIf="!(loggedInUser)" class="button">
             <button [routerLink]="'/login'" mat-raised-button class="submit">Login</button>
+        </div>
+        <div *ngIf="loggedInUser" class="button">
+            <button [routerLink]="'/home'" mat-raised-button class="submit" (click)="logout()">Logout</button>
         </div>
         <div class="button">
             <button [routerLink]="'/register'" mat-raised-button class="submit">Registration</button>
