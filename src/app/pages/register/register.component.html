@@ -1,6 +1,14 @@
 <div class="container">
     <h1 class="text">Registration</h1>
-    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" class="form">
+
+    <div id="choose-form">
+        <mat-radio-group [(ngModel)]="choose" aria-label="Vállasszon az alábbi lehetőségek közül!">
+            <mat-radio-button value="jobSeeker">Job seeker</mat-radio-button>
+            <mat-radio-button value="jobAdvertiser">Job advertiser</mat-radio-button>
+        </mat-radio-group>
+    </div>
+
+    <form [formGroup]="signUpFormSeeker" (ngSubmit)="onSubmitSeeker()" class="form" *ngIf="choose === 'jobSeeker'">
         <mat-form-field class="full-width" appearance="fill">
             <mat-label for="email" class="label-text">Email</mat-label>
             <input type="email" matInput formControlName="email">
@@ -25,6 +33,34 @@
             <mat-label for="repw" class="label-text">Password again</mat-label>
             <input type="password" matInput formControlName="repw">
         </mat-form-field>
+
         <button class="button" type="submit" mat-raised-button>Submit</button>
     </form>
+
+    <form [formGroup]="signUpFormAdvertiser" (ngSubmit)="onSubmitAdvertiser()" class="form"
+        *ngIf="choose === 'jobAdvertiser'">
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label for="email" class="label-text">Email</mat-label>
+            <input type="email" matInput formControlName="email">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label for="company_name" class="label-text">Company Name</mat-label>
+            <input type="text" matInput formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label for="pw" class="label-text">Password</mat-label>
+            <input type="password" matInput formControlName="pw">
+        </mat-form-field>
+
+        <mat-form-field class="full-width" appearance="fill">
+            <mat-label for="repw" class="label-text">Password again</mat-label>
+            <input type="password" matInput formControlName="repw">
+        </mat-form-field>
+
+        <button class="button" type="submit" mat-raised-button>Submit</button>
+    </form>
+
+    
 </div>

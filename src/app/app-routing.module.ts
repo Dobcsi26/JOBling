@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './pages/home/home.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { SingleAdvertisementComponent } from './pages/single-advertisement/single-advertisement.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'single-advertisement', component: SingleAdvertisementComponent },
-
-
-  { path: '**', component: HomeComponent}
+  {
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule),
+  },
+  {
+    path: '',
+    redirectTo: '/login',
+    pathMatch: 'full'
+  },
+  { path: 'single-advertisement', loadChildren: () => import('./pages/single-advertisement/single-advertisement.module').then(m => m.SingleAdvertisementModule) },
+  { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
+  { path: 'register', loadChildren: () => import('./pages/register/register.module').then(m => m.RegisterModule) },
+  {
+    path: '**',
+    redirectTo: '/home'
+  }
 ];
 
 @NgModule({

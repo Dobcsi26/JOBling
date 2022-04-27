@@ -1,5 +1,5 @@
 <div id="main-header">
-    <a routerLink="/">
+    <a routerLink="/home">
         <div class="logo-box">
             <img src="../../../assets/online-job-search-symbol.svg" alt="logo">
             <div class="website-name">
@@ -8,14 +8,13 @@
         </div>
     </a>
     <div class="buttons">
-        <div *ngIf="!(loggedInUser)" class="button">
-            <button [routerLink]="'/login'" mat-raised-button class="submit">Login</button>
-        </div>
-        <div *ngIf="loggedInUser" class="button">
-            <button [routerLink]="'/home'" mat-raised-button class="submit" (click)="logout()">Logout</button>
+        <div class="button">
+            <button *ngIf="!loggedInUser" [routerLink]="'/login'" mat-raised-button class="submit">Login</button>
+            <button *ngIf="loggedInUser" [routerLink]="'/login'" mat-raised-button class="submit" (click)="logout()">Logout</button>
         </div>
         <div class="button">
-            <button [routerLink]="'/register'" mat-raised-button class="submit">Registration</button>
+            <button *ngIf="!loggedInUser" [routerLink]="'/register'" mat-raised-button class="submit">Registration</button>
+            <button *ngIf="loggedInUser" [routerLink]="'/single-advertisement'" mat-raised-button class="submit">Create Advertisement</button>
         </div>
     </div>
 </div>

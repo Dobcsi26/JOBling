@@ -17,28 +17,16 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { HomeModule } from './pages/home/home.module';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { SingleAdvertisementComponent } from './pages/single-advertisement/single-advertisement.component';
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatInputModule } from '@angular/material/input';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    MenuComponent,
-    LoginComponent,
-    RegisterComponent,
-    SingleAdvertisementComponent
+    MenuComponent
   ],
   imports: [
     // Angular    
@@ -46,19 +34,10 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,    
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    HomeModule,
+    ReactiveFormsModule, 
 
     // App
     AppRoutingModule,
-    FormsModule,
-
-    // Material
-    MatToolbarModule,
-    MatInputModule,
-    MatIconModule,
-    MatListModule,
-    MatFormFieldModule,
     MatButtonModule,
 
     // Firebase
