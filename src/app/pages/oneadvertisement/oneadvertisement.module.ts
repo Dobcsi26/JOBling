@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { HomeRoutingModule } from './home-routing.module';
-import { HomeComponent } from './home.component';
+import { OneadvertisementRoutingModule } from './oneadvertisement-routing.module';
+import { OneadvertisementComponent } from './oneadvertisement.component';
+
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 
+
 @NgModule({
   declarations: [
-    HomeComponent
+    OneadvertisementComponent
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule,
-    MatListModule,
+    OneadvertisementRoutingModule,
     MatIconModule
   ]
 })
-export class HomeModule { }
+export class OneadvertisementModule { }

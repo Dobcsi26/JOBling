@@ -1,6 +1,7 @@
 <div class="container">
-    <h1 class="text">Registration</h1>
+    <mat-icon>Registration</mat-icon>
 
+    <h1 class="text">Registration</h1> 
     <div id="choose-form">
         <mat-radio-group [(ngModel)]="choose" aria-label="Vállasszon az alábbi lehetőségek közül!">
             <mat-radio-button value="jobSeeker">Job seeker</mat-radio-button>
@@ -33,6 +34,7 @@
             <mat-label for="repw" class="label-text">Password again</mat-label>
             <input type="password" matInput formControlName="repw">
         </mat-form-field>
+        <mat-checkbox>Accept</mat-checkbox>
 
         <button class="button" type="submit" mat-raised-button>Submit</button>
     </form>
@@ -58,8 +60,11 @@
             <mat-label for="repw" class="label-text">Password again</mat-label>
             <input type="password" matInput formControlName="repw">
         </mat-form-field>
+        <mat-checkbox>Accept</mat-checkbox>
 
         <button class="button" type="submit" mat-raised-button>Submit</button>
+        <mat-slide-toggle>Slide me!</mat-slide-toggle>
+
     </form>
 
     

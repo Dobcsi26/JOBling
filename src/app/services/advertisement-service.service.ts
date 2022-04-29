@@ -15,4 +15,16 @@ export class AdvertisementServiceService {
     advertisement.id = this.afs.createId();
     return this.afs.collection<Advertisement>(this.collectionName).doc(advertisement.id).set(advertisement);
   }
+
+  getAll() {
+    return this.afs.collection<Advertisement>(this.collectionName).valueChanges();
+  }
+
+  delete(id: string) {
+    return this.afs.collection<Advertisement>(this.collectionName).doc(id).delete();
+  }
+
+  getById(id: string) {
+    return this.afs.collection<Advertisement>(this.collectionName).doc(id).valueChanges();
+  }
 }

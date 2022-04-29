@@ -1,0 +1,13 @@
+<div class="outer-contaiiner">
+    <div class="container">
+        <h2>Advertisement getByID</h2>
+        <ul class="advertisements" *ngIf="advertisement !== undefined">
+            <li>
+                <span class="badge">{{advertisement.id}}</span> {{advertisement.title}}
+                <button>
+                    <mat-icon (click)="deleteAdvertisement(advertisement.id)">delete</mat-icon>
+                </button>
+            </li>
+        </ul>
+    </div>
+</div>

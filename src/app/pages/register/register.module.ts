@@ -11,6 +11,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -35,7 +38,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatListModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCheckboxModule,
+    MatProgressSpinnerModule,
+    MatSlideToggleModule
   ]
 })
 export class RegisterModule { }

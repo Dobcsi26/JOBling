@@ -1,17 +1,17 @@
 <div class="container">
     <h1 class="text">Create an advertisement!</h1>
-    <form class="form" [formGroup]="createAdvertisementForm">
-
+    <form class="form" [formGroup]="createAdvertisementForm" (ngSubmit)="createAdverisement()">
 
         <mat-form-field class="full-width" appearance="fill">
-            <mat-label class="label-text" for="title">Title: </mat-label>
+            <mat-label class="label-text" for="title">Title </mat-label>
             <input matInput type="text" formControlName="title" />
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
-            <mat-label class="label-text" for="company_name">Company_name: </mat-label>
+            <mat-label class="label-text" for="company_name">Company name </mat-label>
             <input matInput type="text" formControlName="company_name" />
         </mat-form-field>
+
         <span>
             <span><button class="button" mat-raised-button (click)="createAdverisement()">Submit</button></span>
         </span>

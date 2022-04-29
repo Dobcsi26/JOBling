@@ -1,2 +1,12 @@
-<p>home works!</p>
-<button [routerLink]="'single-advertisement'">Advertisements</button>
+<div class="outer-contaiiner">
+    <div class="container">
+        <h2>Advertisements</h2>
+        <ul class="advertisements">
+            <li *ngFor="let advertisement of advertisements">
+                <span class="badge">{{advertisement.id}}</span> {{advertisement.title}}
+                <button><mat-icon [routerLink]="'/oneadvertisement/' + advertisement.id">remove_red_eye</mat-icon></button>
+                <button><mat-icon (click)="deleteAdvertisement(advertisement.id)">delete</mat-icon></button>
+            </li>
+        </ul>
+    </div>
+</div>
